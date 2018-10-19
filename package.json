@@ -26,6 +26,7 @@
     "broccoli-asset-rev": "^2.7.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.3.0",
+    "ember-cli-blueprint-helpers": "^0.4.3",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-htmlbars": "^2.0.1",
@@ -46,6 +47,7 @@
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^6.0.1",
     "loader.js": "^4.2.3",
+    "node-vibrant": "^3.0.0",
     "qunit-dom": "^0.6.2"
   },
   "engines": {
