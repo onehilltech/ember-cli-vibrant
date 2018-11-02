@@ -1,4 +1,4 @@
-/* global Vibrant */
+/* global Vibrant, Swatch */
 
 import Service from '@ember/service';
 
@@ -6,28 +6,28 @@ import { isPresent } from '@ember/utils';
 import { Promise } from 'rsvp';
 
 export default Service.extend ({
-  // Cache of palettes for quick lookup of past computations.
-  _palettes: null,
+  palettes: null,
 
   init () {
     this._super (...arguments);
 
-    this._palettes = {};
+    this.set ('palettes', {});
   },
 
   clear () {
-    this._palettes = {};
+    this.set ('palettes', {});
   },
 
-  fromUrl (url) {
-    let palette = this._palettes[url];
+  fromUrl (url, key) {
+    key = key || url;
+    let palette = this.palettes[key];
 
     if (isPresent (palette)) {
       return Promise.resolve (palette);
     }
 
     return Vibrant.from (url).getPalette ().then (palette => {
-      this._palettes[url] = palette;
+      this.palettes[key] = palette;
 
       return palette;
     });
